@@ -1,0 +1,17 @@
+collection in java
+
+									collection <<interface>>
+
+List << Interface >>                  Set << Interface >>                        Queue<<Interface>>
+
+
+
+Set ==> Unique element
+List ==> duplicate element
+Queue ==> duplicate element allowed here also
+
+
+ 
+
+List <<Interface>> ==> ArrayList,LinkedList,Vector
+

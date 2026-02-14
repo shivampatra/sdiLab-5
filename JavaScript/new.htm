@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .container{
+            border: 2px solid black;
+            margin: 8rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        .item{
+            margin: 2rem;
+        }
+        button{
+            height: 5em;
+            width: 10em;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="item">
+        Name <input type="text" id="name"> <br><br>
+        </div>
+        <div class="item">
+        Age <input type="text" id="age">   <br><br>
+        </div>
+        <div class="item">
+        Phone <input type="text" name="phone" id="phone">  <br> <br>
+</div>
+        <button onclick="validate()" type="button">Submit</button>
+
+
+        <p id="res1"></p>
+        <p id="res2"></p>
+        <p id="res3"></p>
+
+    </div>
+
+    <script>
+        function validate(){
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let phone = document.getElementById("phone").value;
+            
+            let hasNumber = /\d/;
+
+            let r1=true;
+            let r2=true;
+            let r3=true;
+            
+            if(hasNumber.test(name)){
+                document.getElementById("res1").innerHTML="Not Valid : Name Should not contain Number";
+                r1=false;
+            }
+            else{
+                document.getElementById("res1").innerHTML="Name is valid";
+            }
+           
+
+            if(age>110 || age<0){
+                document.getElementById("res2").innerHTML="age is not valid";
+                r2=false;
+            }
+            else{
+                document.getElementById("res1").innerHTML="Age is Valid";
+            }
+
+            if(phone.length!=10){
+                document.getElementById("res3").innerHTML="Phone number is not valid"
+                r3=false;
+            }
+
+
+            if(r1==true && r2==true && r3==true){
+                document.getElementById("res1").innerHTML="Valid : Name ";
+                document.getElementById("res2").innerHTML="Valid : Age ";
+                document.getElementById("res3").innerHTML="Valid : Phone";
+            }
+        }
+    </script>
+</body>
+</html>
